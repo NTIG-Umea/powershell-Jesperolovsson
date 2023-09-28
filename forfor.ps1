@@ -1,6 +1,10 @@
 
 
 for ($i = 0; $i -lt 256; $i++) {
-    Write-Output "192.168.0.$i"
+    $ping = Test-Connection  "10.80.44.$i" -Quiet -Count 1;
+    If ($ping -eq $true) {
+        Write-Output "10.80.44.$i"
+    }
+
     
 }
