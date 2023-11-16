@@ -1,0 +1,24 @@
+﻿New-ADUser -Name "jesper" -AccountPassword (convertTo-SecureString "jesolo06" AsPlainText -Force) -Enabled $true
+
+Remove-adUser -Identity "något namn" 
+
+Get-ADUser -Filter 'Name -like "*"'
+
+New-ADGroup -name "group name" 
+
+Remove-ADGroup -Identity "group name"
+
+Get-ADGroup -Filter 'name -like "Access*"' | Set-ADGroup -Description "Access Group" # modifies the Description property on all groups that have a name that starts with Access by using the pipeline operator
+
+New-ADOrganizationalUnit -name "useraccounts" -Path "DC=FABRIKAM,DC=COM" -ProtectedFromAccidentalDeletion $False
+
+ Remove-ADOrganizationalUnit
+
+ Add-ADGroupMember 
+
+ Remove-ADGroupMember -Identity "" -Members "" #tar bort en member från adgroupmember
+ Get-ADOrganizationalUnit -filter "*" | select name # för att bara få fram sina namn 
+
+To "Change" its either Get-Adgroup 
+
+Set-ADAccountPassword  'name' -reset 
